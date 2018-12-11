@@ -5,7 +5,7 @@
   version="2.1">
 
   <persistence-unit name="LOCAL_PERSISTENCE">
-    <description> Spring Hibernate JPA Configuration Example</description>
+    <description> Spring Hibernate JPA Configuration</description>
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
     <properties>

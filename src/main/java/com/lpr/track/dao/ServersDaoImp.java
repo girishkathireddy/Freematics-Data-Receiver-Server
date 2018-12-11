@@ -2,6 +2,7 @@ package com.lpr.track.dao;
 
 import com.lpr.track.entity.Clients;
 import com.lpr.track.entity.Servers;
+import com.lpr.track.exception.BusinessException;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -17,11 +18,16 @@ public class ServersDaoImp implements ServersDao {
     private EntityManager em;
 
     @Override
-    public List<Servers> getServersInfo() {
+    public List<Servers> getServersInfo() throws BusinessException {
 
-        CriteriaQuery<Servers> criteriaQuery = em.getCriteriaBuilder().createQuery(Servers.class);
-        @SuppressWarnings("unused")
-        Root<Servers> root = criteriaQuery.from(Servers.class);
-        return em.createQuery(criteriaQuery).getResultList();
+        try {
+            CriteriaQuery<Servers> criteriaQuery = em.getCriteriaBuilder().createQuery(Servers.class);
+            @SuppressWarnings("unused")
+            Root<Servers> root = criteriaQuery.from(Servers.class);
+            return em.createQuery(criteriaQuery).getResultList();
+
+        }catch (Exception e ){
+            throw new BusinessException("Couldnt connect to database");
+        }
     }
 }

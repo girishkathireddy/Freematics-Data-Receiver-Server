@@ -2,6 +2,14 @@ package com.lpr.track.utility;
 
 public class HelperConstants {
 
+    public static final String EVENT = "EV";
+
+    public static final String TIME_STAMP_COUNTER = "TS";
+
+    public static final String VIN = "VIN";
+
+    public static final String SERVER_KEY = "SK";
+
     public static final String TEND="10D";
 
 

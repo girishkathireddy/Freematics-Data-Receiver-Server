@@ -2,6 +2,7 @@ package com.lpr.track.service;
 
 import com.lpr.track.dao.DataDao;
 import com.lpr.track.entity.Data;
+import com.lpr.track.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ public class DataServiceImpl implements DataService{
 
     @Transactional
     @Override
-    public void add(Data data) {
+    public void add(Data data) throws BusinessException {
      dataDao.add(data);
     }
 }

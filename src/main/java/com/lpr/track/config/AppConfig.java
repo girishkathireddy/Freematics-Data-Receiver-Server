@@ -9,7 +9,7 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author imssbora
+ * @author Girish
  *
  */
 @Configuration
